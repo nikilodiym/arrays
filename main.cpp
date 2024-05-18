@@ -4,16 +4,26 @@ using namespace std;
 
 
 int main() {
-	double profitForTheMonth[6];
-	double allProfit = 0;
+	int array[] = {1, 2, 3, 4, 5};
+	int size = sizeof(array) / sizeof(array[0]);
 
-	for (int i = 0; i < 6; i++) {
-		cout << "Enter the profit for the month " << i + 1 << ": ";
-		cin >> profitForTheMonth[i];
-		allProfit += profitForTheMonth[i];
+	cout << "Array: ";
+	for (int i = 0; i < size; i++) {
+		cout << array[i] << " ";
+	}
+	cout << endl;
+
+	for (int i = 0; i < size / 2; i++) {
+		int temp = array[i];
+		array[i] = array[size - i - 1];
+		array[size - i - 1] = temp;
 	}
 
-	cout << "The profit for the 6 months is: " << allProfit << endl;
+	cout << "Reversed array: ";
+	for (int i = 0; i < size; i++) {
+		cout << array[i] << " ";
+	}
+	cout << endl;
 
 	system("pause");
 	return 0;
